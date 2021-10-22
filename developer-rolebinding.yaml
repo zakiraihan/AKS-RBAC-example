@@ -1,0 +1,22 @@
+# developer-rolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  creationTimestamp: null
+  name: developer-binding
+  namespace: dev
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: developer
+subjects:
+# contoh role binding pada User
+# - apiGroup: rbac.authorization.k8s.io
+#   kind: User
+#   name: 08ad7cea-70e4-4aa6-9a96-e46e0afd0566 #objectId user, dikarenakan akun Guest
+
+# contoh role binding pada Group
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: 3bb59bf9-d05d-45fb-92e7-d6f0f3a04372 #objectId dari Group
+
